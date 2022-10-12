@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="menu_flower_root"
+              name="Flowers"
+              action="action_flower"
+              web_icon="flower_shop,static/description/icon.png"/>
+</odoo>
