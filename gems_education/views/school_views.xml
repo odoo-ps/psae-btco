@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_school_form" model="ir.ui.view">
+        <field name="name">view_school_form</field>
+        <field name="model">school.school</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="action_view_members" type="object" icon="fa-users">
+                            <field string="Faculty" name="faculty_count" widget="statinfo" />
+                        </button>
+                        <button class="oe_stat_button" name="action_view_students" type="object" icon="fa-users">
+                            <field string="Students" name="student_count" widget="statinfo" />
+                        </button>
+                        <button class="oe_stat_button" name="action_view_classrooms" type="object" icon="fa-object-group">
+                            <field string="Classrooms" name="classroom_count" widget="statinfo" />
+                        </button>
+                        <button class="oe_stat_button" name="action_view_subjects" type="object" icon="fa-book">
+                            <field string="Subjects" name="subject_count" widget="statinfo" />
+                        </button>
+                        <button class="oe_stat_button" name="action_view_sessions" type="object" icon="fa-pencil">
+                            <field string="Sessions" name="session_count" widget="statinfo" />
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h3>
+                            <field name="name" placeholder="School Name"/>
+                        </h3>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="establishment_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="street_1"/>
+                            <field name="city"/>
+                            <field name="state_id"/>
+                        </group>
+                        <group>
+                            <field name="street_2"/>
+                            <field name="country_id"/>
+                            <field name="zip_code"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_school_tree" model="ir.ui.view">
+        <field name="name">view_school_tree</field>
+        <field name="model">school.school</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="establishment_date"/>
+                <field name="city"/>
+                <field name="country_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_schools" model="ir.actions.act_window">
+        <field name="name">Schools</field>
+        <field name="res_model">school.school</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a school owned by GEMS Education.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_gems_root"
+              name="GEMS Education"
+              action="action_schools"
+              web_icon="gems_education,static/description/icon.png">
+        <menuitem id="menu_schools"
+                  name="Schools"
+                  action="action_schools"/>
+    </menuitem>
+</odoo>

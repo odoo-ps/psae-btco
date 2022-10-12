@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_school_classroom_form" model="ir.ui.view">
+        <field name="name">view_school_classroom_form</field>
+        <field name="model">school.classroom</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="action_view_sessions" type="object" icon="fa-pencil">
+                            <field string="Sessions" name="session_count" widget="statinfo" />
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h3>
+                            <field name="name" placeholder="Classroom Name"/>
+                        </h3>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="school_id"/>
+                            <field name="has_projector" widget="boolean_toggle"/>
+                        </group>
+                        <group>
+                            <field name="capacity"/>
+                            <field name="has_smart_board" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_school_classroom_tree" model="ir.ui.view">
+        <field name="name">view_school_classroom_tree</field>
+        <field name="model">school.classroom</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="capacity"/>
+                <field name="school_id"/>
+                <field name="has_projector"/>
+                <field name="has_smart_board"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_school_classrooms" model="ir.actions.act_window">
+        <field name="name">School Classrooms</field>
+        <field name="res_model">school.classroom</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a classroom for any school.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_classrooms"
+              parent="menu_gems_root"
+              name="Classrooms"
+              action="action_school_classrooms"/>
+</odoo>
