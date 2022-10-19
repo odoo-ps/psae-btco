@@ -1,9 +1,6 @@
-# TCO Training
+# Backend Training - Technical Consultant Onboarding
 
-Thank you for taking the time to read this page, which contains a suite of exercises to exercises the following subjects:
-
--   Models
--   Fields
--   Views
--   Model Inheritance (Class, Prototype, Delegation)
--   View Inheritance
+This project is in progress. Here is a list of available case studies for the backend training program:
+- Awesome School
+- Sally's Flower Shop
+- Realty Management
