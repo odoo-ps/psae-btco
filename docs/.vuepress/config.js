@@ -1,5 +1,6 @@
 module.exports = {
     title: "BTCO Training",
+    base: "/psae-btco/",
     description: "Static website for sharing technical exercises and tutorials",
     themeConfig: {
         sidebarDepth: 2,

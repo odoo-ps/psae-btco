@@ -13,3 +13,4 @@ she wants to have a list tracking all the watering she has done.
 - Add a constraint on `stock.production.lot` to prevent the user from watering before they're supposed to
 (i.e. compare the _last watering date_ with the _watering frequency_)
 - For more convenience, add a server action that automatically attempts to water all the selected plants from the `stock.production.lot` list view
+- Ensure that all flower records display their names as per the following naming convention: `scientific_name (common_name)`
