@@ -13,8 +13,8 @@ we can only make up to 60 API calls per minute.
 - Add a system parameter to store the API key
 - Add a button on `stock.warehouse` to fetch the current weather data based on the location of the warehouse
 - Furthermore, create a scheduled action to get every warehouse's weather data hourly
-- To save on Sally's expenses, create a scheduled action to get a 5-day weather forecast daily and if any data contains
-rain volume > 3 mm, then water all the flowers in that warehouse
+- To save on Sally's expenses, create a scheduled action to get a forecast everyday and if the current day contains
+rain volume > 0.2 mm between 9 AM and 6 PM, then automatically water all the flowers in that warehouse
 
 The new model `stock.warehouse.weather` should have the following attributes:
 - Temperature
