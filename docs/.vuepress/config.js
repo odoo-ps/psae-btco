@@ -9,7 +9,7 @@ module.exports = {
             {
                 title: "Exercises",
                 collapsable: false,
-                path: "/btco/",
+                path: "/btco/exercises/",
                 children: [
                     {
                         title: "Awesome School - Part 1",
@@ -41,7 +41,12 @@ module.exports = {
                 title: "Solutions",
                 collapsable: false,
                 path: "/btco/solutions/",
-                children: [],
+                children: [
+                    {
+                        title: "Sally's Flower Shop - Part 1",
+                        path: "/btco/solutions/flower_shop.html",
+                    },
+                ],
             },
         ],
     },
