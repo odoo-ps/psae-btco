@@ -100,6 +100,30 @@ module.exports = {
                                 title: "Part 1",
                                 path: "/solutions/flower_shop.html",
                             },
+                            {
+                                title: "Part 2",
+                                path: "/solutions/flower_shop_2.html",
+                            },
+                            {
+                                title: "Part 3",
+                                path: "/solutions/flower_shop_3.html",
+                            },
+                            {
+                                title: "Part 4",
+                                path: "/solutions/flower_shop_4.html",
+                            },
+                            {
+                                title: "Part 5",
+                                path: "/solutions/flower_shop_5.html",
+                            },
+                            {
+                                title: "Part 6",
+                                path: "/solutions/flower_shop_6.html",
+                            },
+                            {
+                                title: "Part 7",
+                                path: "/solutions/flower_shop_7.html",
+                            },
                         ],
                     }
                 ],
