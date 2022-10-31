@@ -25,6 +25,7 @@
     # always loaded
     'data': [
         # data
+        'data/groups.xml',
         'data/paperformat.xml',
         'data/actions.xml',
         # views
@@ -40,6 +41,7 @@
         'views/menu_items.xml',
         # security
         'security/ir.model.access.csv',
+        'security/rules.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,4 +1,4 @@
-from odoo import models, fields, _
+from odoo import models, fields, _, api
 from odoo.exceptions import UserError
 
 
@@ -22,6 +22,7 @@ class StockProductionLot(models.Model):
             self.env["flower.water"].create({
                 "serial_id": record.id,
             })
+        self.env["product.product"].action_needs_watering()
         if bad_vals:
             self.env.cr.commit()
             raise UserError(_("Some flowers could not be watered. IDs={}".format(bad_vals)))
@@ -35,3 +36,11 @@ class StockProductionLot(models.Model):
             "view_mode": "list",
             "domain": [("id", "in", self.water_ids.ids)],
         }
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            product = self.env["product.product"].browse(vals["product_id"])
+            if product.sequence_id:
+                vals["name"] = product.sequence_id.next_by_id()
+        return super().create(vals_list)
