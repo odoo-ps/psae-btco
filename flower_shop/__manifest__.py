@@ -24,8 +24,8 @@
 
     # always loaded
     'data': [
-        # security
-        'security/ir.model.access.csv',
+        # data
+        'data/paperformat.xml',
         'data/actions.xml',
         # views
         'views/flower_views.xml',
@@ -34,8 +34,12 @@
         'views/stock_production_lot_views.xml',
         'views/templates.xml',
         'views/flower_water_views.xml',
+        # reports
+        'reports/flower_sale_order_views.xml',
         # menuitems
         'views/menu_items.xml',
+        # security
+        'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode
     'demo': [
