@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="product_normal_form_view" model="ir.ui.view">
+        <field name="name">product.normal.form.inherit.flower.app</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='purchase_ok']/.." position="after">
+                <span class="d-inline-block">
+                    <field name="is_flower"/>
+                    <label for="is_flower"/>
+                </span>
+            </xpath>
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="flower_id" attrs="{'invisible': [('is_flower','=',False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

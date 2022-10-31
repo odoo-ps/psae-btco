@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': [],
+    'depends': ["sale"],
 
     # always loaded
     'data': [
@@ -29,6 +29,8 @@
         'data/actions.xml',
         # views
         'views/flower_views.xml',
+        'views/product_views.xml',
+        'views/sale_order_views.xml',
         # menuitems
         'views/menu_items.xml',
     ],
