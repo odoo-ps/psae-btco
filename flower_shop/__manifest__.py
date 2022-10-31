@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ["website_sale", "stock"],
+    'depends': ["website_sale", "stock", "base_geolocalize"],
 
     # always loaded
     'data': [
@@ -28,15 +28,17 @@
         'data/groups.xml',
         'data/paperformat.xml',
         'data/actions.xml',
+        'data/config.xml',
         # views
         'views/flower_views.xml',
         'views/product_views.xml',
         'views/sale_order_views.xml',
         'views/stock_production_lot_views.xml',
         'views/templates.xml',
-        'views/flower_water_views.xml',
+        'views/stock_warehouse_views.xml',
         # reports
         'reports/flower_sale_order_views.xml',
+        'views/flower_water_views.xml',
         # menuitems
         'views/menu_items.xml',
         # security

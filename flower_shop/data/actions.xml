@@ -6,7 +6,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-     <record id="action_flower_product" model="ir.actions.act_window">
+    <record id="action_flower_product" model="ir.actions.act_window">
         <field name="name">Flower Products</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">product.product</field>
@@ -47,5 +47,27 @@
         <field name="model_id" ref="product.model_product_product"/>
         <field name="state">code</field>
         <field name="code">model.action_needs_watering()</field>
+    </record>
+
+    <record id="ir_cron_get_weather_all_warehouses" model="ir.cron">
+        <field name="name">Get weather for all warehouses hourly</field>
+        <field name="model_id" ref="stock.model_stock_warehouse"/>
+        <field name="state">code</field>
+        <field name="code">model.get_weather_all_warehouses()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">hours</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+    </record>
+
+    <record id="ir_cron_get_forecast_all_warehouses" model="ir.cron">
+        <field name="name">Get 5-day forecast for all warehouses hourly</field>
+        <field name="model_id" ref="stock.model_stock_warehouse"/>
+        <field name="state">code</field>
+        <field name="code">model.get_forecast_all_warehouses()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
     </record>
 </odoo>

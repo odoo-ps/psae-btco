@@ -7,6 +7,7 @@ class StockProductionLot(models.Model):
 
     water_ids = fields.One2many("flower.water", "serial_id")
     is_flower = fields.Boolean(related="product_id.is_flower")
+    needs_watering = fields.Boolean(compute="_compute_needs_watering")
 
     def action_water_flower(self):
         flowers = self.filtered(lambda rec: rec.is_flower)
