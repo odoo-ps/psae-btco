@@ -1,5 +1,5 @@
 <template>
-  <div style="display: inline-flex">
+  <div style="display: inline-flex; margin-bottom: 12px;">
     <button @click="redirect">
       <div>View Code</div>
     </button>
@@ -38,12 +38,11 @@ button:hover {
 
 button {
   position: relative;
-  padding: 5px 15px;
+  padding: 8px 18px;
   overflow: hidden;
   float: left;
-  margin: 0px 10px 10px 0px;
   border-radius: 8px;
-  font-size: 8px;
+  font-size: 10px;
   color: #FFF;
   text-decoration: none;
   border: none;
