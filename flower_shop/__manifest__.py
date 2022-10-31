@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ["website_sale"],
+    'depends': ["website_sale", "stock"],
 
     # always loaded
     'data': [
@@ -31,7 +31,9 @@
         'views/flower_views.xml',
         'views/product_views.xml',
         'views/sale_order_views.xml',
+        'views/stock_production_lot_views.xml',
         'views/templates.xml',
+        'views/flower_water_views.xml',
         # menuitems
         'views/menu_items.xml',
     ],
