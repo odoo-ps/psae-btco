@@ -7,3 +7,4 @@ be able to use the flowers within sale order lines.
 - Add a boolean to differentiate between normal products and flowers
 - Keep flowers in a different menu item
 - Make sure that products that are created from the flowers-only menu item window action are set to be flowers by default
+- In sale order lines, only show products that are flowers

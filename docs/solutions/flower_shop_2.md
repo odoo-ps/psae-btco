@@ -2,7 +2,7 @@
 
 [View the commit for this solution](https://github.com/odoo-ps/psae-btco/commit/bfc90b73ec1030971c4b4350c8ae35f9284b3036)
 
-In this case study, we are going to add a relation between two models: `flower.flower` and `product.product`. There are
+In this case study, we are going to add a [relation between two models](https://www.odoo.com/documentation/16.0/developer/howtos/backend.html#relations-between-models): `flower.flower` and `product.product`. There are
 a few judgement calls to be made before relating the two models.
 
 #### What relational field should I use?
@@ -32,3 +32,5 @@ class Product(models.Model):
 ```
 
 <GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/models/product.py#L10"></GitHubButton>
+
+The next step is to add the fields in the form view of `product.product` model.
