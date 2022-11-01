@@ -90,9 +90,27 @@ This brings us to [menu items](https://www.odoo.com/documentation/16.0/developer
 In addition, we have to let the menu item know what view to render and this is done by associating
 a [window action](https://www.odoo.com/documentation/16.0/developer/reference/backend/actions.html#window-actions-ir-actions-act-window)
 with it. Both menu items and actions can be either specified in the same file as the views or defined in their own
-files, as long as they are included in `__manifest__.py`. Moreover, it is important these XML records are loaded in an
-orderly manner starting with views and actions and ending with menu items. In this example, we shall define them separately in their
-respective files.
+files, as long as they are included in the manifest. Moreover, it is important these XML records are loaded in an
+orderly manner starting with views and actions and ending with menu items. In this example, we shall define them
+separately in their respective files.
+
+When a menu item does not have the `parent` attribute, it is considered a root, and it appears as an icon on the home
+screen.
+Moreover, we can bind an action and optionally provide an icon using the attributes `action` and `web_icon`
+respectively.
+If you wish to create Odoo-style icons, use this [tool](https://spilymp.github.io/ibo/).
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="..."
+              name="..."
+              action="xml_id_of_window_action"
+              web_icon="module_name,static/description/icon.png"/>
+</odoo>
+```
+
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/views/menu_items.xml#L3"></GitHubButton>
 
 Upon successful installation of the module, an app icon should appear on the home screen.
 ![Successful module installation](../.vuepress/assets/images/part-1-img-1.png)
