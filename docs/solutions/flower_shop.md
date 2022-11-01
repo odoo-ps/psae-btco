@@ -118,4 +118,7 @@ Upon successful installation of the module, an app icon should appear on the hom
 Once we click on the app, it should display the list/tree view of the model.
 ![List view of model](../.vuepress/assets/images/part-1-img-2.png)
 
+Here is the form view of the model.
+![Form view of model](../.vuepress/assets/images/part-1-img-3.png)
+
 This marks the completion of part 1 of the case study.
