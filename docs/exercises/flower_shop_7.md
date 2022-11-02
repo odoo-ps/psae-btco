@@ -3,7 +3,7 @@
 Sally wishes to expand her business across multiple warehouses.
 She wants to fetch and maintain daily weather updates at the location of each warehouse.
 
-As part of this case study, we will be using [Open Weather Map API](https://openweathermap.org/) to get the weather data.
+As part of this exercise, we will be using [Open Weather Map API](https://openweathermap.org/) to get the weather data.
 
 Note: the free API provides only 2 types of call - current weather data and 5-day forecasts with a step of 3 hours. Also,
 we can only make up to 60 API calls per minute.
