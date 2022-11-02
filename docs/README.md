@@ -6,7 +6,7 @@ This program is tailored with the basics of Odoo development to help partners ac
 framework as well as the best practices. By the end of the program, you will be equipped with knowledge to add custom features, or remove and modify
 existing features as per clients' requirements.
 
-Please note that the case studies available on this site assume that you have either completed or are currently undertaking the
+Please note that the exercises available on this site assume that you have either completed or are currently undertaking the
 backend training program with a technical consultant at Odoo Middle East.
 
 ## Resources

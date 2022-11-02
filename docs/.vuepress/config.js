@@ -1,5 +1,5 @@
 module.exports = {
-    title: "BTCO",
+    title: "Backend Technical Consultant Onboarding (BTCO)",
     base: "/psae-btco/",
     description: "Exercises, codes and solutions for the BTCO training program",
     themeConfig: {
