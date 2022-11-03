@@ -2,12 +2,16 @@
 
 [View the commit for this solution](https://github.com/odoo-ps/psae-btco/commit/27601745934143e124f6d9502a59203987c9884c)
 
+### Module
+
 The first step is to create a new module inside of the project folder. To do this, create a new folder for the module
 and ensure that it contains `__init__.py` and `__manifest__.py`. Alternatively, we can use
 the [scaffolder](https://www.odoo.com/documentation/15.0/developer/cli.html#scaffolding)
 to automate the creation of the module.
 
 We shall name our module `flower_shop`.
+
+### Model and Fields
 
 Next, we will create a
 Python [model](https://www.odoo.com/documentation/16.0/developer/reference/backend/orm.html#models) to represent flowers
@@ -38,7 +42,7 @@ season_start = fields.Date()
 season_end = fields.Date()
 ```
 
-<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/models/flower.py#L11"></GitHubButton>
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/models/flower.py#L11"></GitHubButton>
 
 Often, it is helpful to provide tooltips especially if the field's label is not very obvious. This is achieved by using
 the `help` field attribute. We will use this for the field _Watering frequency_.
@@ -47,7 +51,9 @@ the `help` field attribute. We will use this for the field _Watering frequency_.
 watering_frequency = fields.Integer(help="Frequency is in number of days")
 ```
 
-<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/models/flower.py#L12"></GitHubButton>
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/models/flower.py#L12"></GitHubButton>
+
+### Access Rights
 
 For any new model, we have to define
 its [access rights](https://www.odoo.com/documentation/16.0/developer/reference/backend/security.html#access-rights).
@@ -60,7 +66,9 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_flower,commission.type,model_flower_flower,base.group_user,1,1,1,1
 ```
 
-<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/security/ir.model.access.csv#L2"></GitHubButton>
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/security/ir.model.access.csv#L2"></GitHubButton>
+
+### List and Form Views
 
 We have to define [views](https://www.odoo.com/documentation/16.0/developer/howtos/backend.html#basic-views) for our new
 model. In order to render a list of all the flower records in the database, we will
@@ -83,7 +91,9 @@ special tags like `form` or `tree` inside the `arch` field.
 </odoo>
 ```
 
-<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/views/flower_views.xml#L7"></GitHubButton>
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/views/flower_views.xml#L7"></GitHubButton>
+
+### Window Action and Menu Item
 
 We now have a model and some way to render its records, but we have to define a way for the user to get to the views.
 This brings us to [menu items](https://www.odoo.com/documentation/16.0/developer/howtos/backend.html#actions-and-menus) - interactive, clickable components that can redirect the user.
@@ -110,7 +120,7 @@ If you wish to create Odoo-style icons, use this [tool](https://spilymp.github.i
 </odoo>
 ```
 
-<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/views/menu_items.xml#L3"></GitHubButton>
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/views/menu_items.xml#L3"></GitHubButton>
 
 Upon successful installation of the module, an app icon should appear on the home screen.
 ![Successful module installation](../.vuepress/assets/images/part-1-img-1.png)

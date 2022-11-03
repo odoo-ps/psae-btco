@@ -7,7 +7,7 @@ a [relation between two models](https://www.odoo.com/documentation/16.0/develope
 and `product.product`. There are
 a few judgement calls to be made before relating the two models.
 
-### Judgement Calls
+### Questions
 
 #### What relational field should I use?
 
@@ -35,9 +35,9 @@ class Product(models.Model):
     flower_id = fields.Many2one("flower.flower")
 ```
 
-<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/models/product.py#L10"></GitHubButton>
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/models/product.py#L10"></GitHubButton>
 
-### View Inheritance for Product Variants
+### View Inheritance
 
 The next step is to add the fields in the form view of `product.product` model. Note that this view is for a product
 variant, not a product template. In case you are unable to find this view, please install the Sales app (technical
@@ -47,7 +47,7 @@ because we will add fields to
 an existing view.
 ![Form view of product.product](../.vuepress/assets/images/part-2-img-1.png)
 
-### Writing Reliable XPath Expressions
+### Reliable XPath Expressions
 
 It is important that
 our [XPath expressions](https://www.odoo.com/documentation/16.0/developer/reference/backend/views.html#inheritance-specs) (`expr`
@@ -71,9 +71,9 @@ example, we use the `name` attribute with the value `categ_id` to look for a `fi
 </odoo>
 ```
 
-<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/views/product_views.xml#L14"></GitHubButton>
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/views/product_views.xml#L14"></GitHubButton>
 
-### Window Action and Menu Item for Flower Products
+### Flower-Only Products
 
 Another requirement is to display all flower products with the click of
 a [menu item](https://www.odoo.com/documentation/16.0/developer/howtos/backend.html#actions-and-menus). First, we will
@@ -97,7 +97,7 @@ this, we will pass some default value through the `context` field.
 </odoo>
 ```
 
-<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/data/actions.xml#L9"></GitHubButton>
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/data/actions.xml#L9"></GitHubButton>
 
 When creating the menu item, we have to identify the exact location for it. We want to place it under
 Sales/Products menu and therefore, the `parent` field must be specified with the correct XML ID. Additionally, we have
@@ -114,12 +114,12 @@ must be added as a dependency in the manifest.
 </odoo>
 ```
 
-<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/views/menu_items.xml#L8"></GitHubButton>
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/views/menu_items.xml#L8"></GitHubButton>
 
 By the end of this, you should have a menu item similar to the screenshot below.
 ![Menu item for flower products](../.vuepress/assets/images/part-2-img-2.png)
 
-### Product Domain in Sale Order Lines
+### Domain
 
 The last bit of this exercise requires adding a domain on `product_id` field in the model `sale.order.line`. Upon
 investigation, we find that the field already contains a domain defined in XML in the form view. To change this, we will
@@ -143,6 +143,6 @@ domain and modify it to ensure that only flower products are displayed in the li
 </odoo>
 ```
 
-<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/6adc65ac5398ed486c352d4f6dec770467a4f36e/flower_shop/views/sale_order_views.xml"></GitHubButton>
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/views/sale_order_views.xml"></GitHubButton>
 
 This marks the completion of part 2 of the case study.
