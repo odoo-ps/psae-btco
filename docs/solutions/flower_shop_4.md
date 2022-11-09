@@ -96,7 +96,7 @@ def action_water_flower(self):
     ...
 ```
 
-<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/models/stock_production_lot.py#L12"><GitHubButton>
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/models/stock_production_lot.py#L12"></GitHubButton>
 
 ### Constraint
 
