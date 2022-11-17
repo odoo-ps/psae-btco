@@ -2,7 +2,8 @@
 
 [View the commit for this solution](https://github.com/odoo-ps/psae-btco/commit/7aa392f04e7927708b26026e898894a6afb19a62)
 
-This exercise emphasizes on [security](www.odoo.com/documentation/16.0/developer/reference/backend/security.html) in
+This exercise emphasizes
+on [security](https://www.odoo.com/documentation/16.0/developer/reference/backend/security.html) in
 terms of groups and record rules, and a special model in Odoo called `ir.sequence`.
 
 ### Groups
@@ -35,8 +36,9 @@ groups, record rules, any demo data, and more.
 The relationship between products and serials is that a `product.product` record has many `stock.production.lot` (this
 is the model for serial) records. We need to check all the serials for each flower product and if at
 least one serial requires watering, then the product will be marked with a ribbon. Now, one may think of implementing
-this by a computed boolean field in the `product.product` model and the compute method can depend on the serial records.
-Regardless of whether you considered this approach, it cannot be done unfortunately because of the following:
+this by a computed boolean field in the `product.product` model and the compute method can have a dependency on the
+serial records. Regardless of whether you considered this approach, it cannot be done unfortunately because of the
+following:
 
 - there is no reference to `stock.production.lot` (serial) records from the product, rather there is product reference
   in the serial model
@@ -44,10 +46,10 @@ Regardless of whether you considered this approach, it cannot be done unfortunat
   records as well as the
   **current date** since we need to check if any serial needs watering every single day
 
-As a rule of thumb, whenever something needs to be checked every certain time interval, this calls for a [schedule
-action](https://www.odoo.com/documentation/16.0/developer/reference/backend/actions.html#automated-actions-ir-cron). We
-will create a scheduled action that will run some Python code every day. To write our code, we select the `state` field
-to be `code` and in the `code` field, we make a call to a model's function.
+As a rule of thumb, whenever something needs to be checked over fixed time intervals, it calls for
+a [scheduled or automated action](https://www.odoo.com/documentation/16.0/developer/reference/backend/actions.html#automated-actions-ir-cron). 
+We will create a scheduled action that will run some Python code every day. To write our code, we select the `state`
+field to be `code` and in the `code` field, we make a call to a model's function.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -62,8 +64,8 @@ to be `code` and in the `code` field, we make a call to a model's function.
 
 <GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/data/actions.xml#L49"></GitHubButton>
 
-Notice that `model` is a variable available within the scope of the `code` field. Below is the full list of variables
-available for use, copied from the form view of `ir.actions.server`:
+Notice that `model` is a variable available within the scope of the `code` field. The variable contains reference to the model to which this action is bound. 
+Below is the full list of variables available for use and they were copied from the form view of `ir.actions.server`.
 
 ```python
 # Available variables:
@@ -144,8 +146,9 @@ use a loop in our create method to iterate over `vals_list`. Furthermore, the or
 allows multi-record creation and since we are overriding its create method for our use, we must remain consistent with
 the decorator type.
 
-If we inspect the values parameter (can be `vals` or `vals_list`, name does not matter), that is being passed to the create method, these are how their contents would look
-like:
+If we inspect the values parameter (can be `vals` or `vals_list`, name does not matter), that is being passed to the
+create method, below are how their contents would look
+like.
 
 ```python
 # multi-record using @api.model_create_multi
@@ -230,9 +233,10 @@ Note that this record rule applies only on the gardeners' group. While the globa
 flower products, this group-specific rule narrows down the access instead. As a result, a user belonging to the
 gardener's group will see flower products that they are assigned to and the products that do not have anybody assigned.
 
-The result of the record rules can be depicted by the following Venn diagram:
-<br/><br/>
+The result of the record rules can be depicted by the Venn diagram.
+<br/>
 <div style="text-align: center">
 <img src="../.vuepress/assets/images/record-rules-venn-diagram.png" width="550">
 </div>
+<br/>
 This marks the completion of part 6 of the case study.
