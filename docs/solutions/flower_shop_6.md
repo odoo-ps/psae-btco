@@ -232,6 +232,7 @@ gardener's group will see flower products that they are assigned to and the prod
 
 The result of the record rules can be depicted by the following Venn diagram:
 <br/><br/>
-![Record rules Venn diagram](../.vuepress/assets/images/record-rules-venn-diagram.png)
-
+<div style="text-align: center">
+<img src="../.vuepress/assets/images/record-rules-venn-diagram.png" width="550">
+</div>
 This marks the completion of part 6 of the case study.
