@@ -100,11 +100,19 @@ loaded **after** them as it refers to their XML IDs.
 
 <GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/data/actions.xml#L30"></GitHubButton>
 
+If successful, the report action should look like this under the _Print_ options.
+
+![Report action](../.vuepress/assets/images/part-5-img-1.png)
+
 ### Custom Reports
 
 The report data (i.e. records) when passed to the template are referred to as `docs`. However, it is possible for us to
 inject additional data into the template. This can be very useful when
 creating [custom reports](https://www.odoo.com/documentation/16.0/developer/reference/backend/reports.html#custom-reports)
 and involving records from different models and applying calculations prior to rendering.
+
+Here is a glimpse of the final report.
+
+![Final report](../.vuepress/assets/images/part-5-img-2.png)
 
 This marks the completion of part 5 of the case study.
