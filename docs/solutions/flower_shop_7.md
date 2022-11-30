@@ -109,5 +109,27 @@ def get_weather_all_warehouses(self):
 
 <GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/models/stock_warehouse.py#L53"></GitHubButton>
 
+We will create a second scheduled action to get the forecast for each warehouse location. The interval of this action is
+going to be daily. You can find the two scheduled actions in `data/actions.xml`.
+
 ### Weather Forecast
 
+The API call for getting forecast is very similar to the current weather API call. It is important
+to study the response that will be sent back, therefore, please check out
+this [example](https://openweathermap.org/forecast5#JSON) from the API provider's website.
+
+We will define a method that gets forecast data for all warehouses. The first step is make the API call. Once a response
+is acquired, we will extract the data we need between 9 AM to 6 PM of the current day and since the API provides 3-hour
+interval data, we will look into four entries. In any entry, if the rain volume is more than 0.2 mm, we will
+automatically water all the flowers in that warehouse. In order to fetch all the different flower stock in a warehouse,
+the model `stock.quant` is queried. The last step is to call a method we had previously defined on all the serial-numbered
+flowers to water them.
+
+```python
+def get_forecast_all_warehouses(self, show_error=True):
+    ...
+```
+
+<GitHubButton link="https://github.com/odoo-ps/psae-btco/blob/sally-flower-shop/flower_shop/models/stock_warehouse.py#L57"></GitHubButton>
+
+This marks the completion of part 7 of the case study.
