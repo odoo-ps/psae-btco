@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="product_normal_form_view" model="ir.ui.view">
+        <field name="name">product.normal.form.inherit.flower.app</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='barcode']" position="after">
+                <field name="min_age"/>
+            </xpath>
+            <xpath expr="//sheet" position="before">
+                 <div class="alert alert-info" role="alert" attrs="{'invisible': [('min_age', '&gt;', 17)]}">
+                    This product's minimum age is below 18.
+                     Please make sure to check the customer's ID before selling this product.
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
