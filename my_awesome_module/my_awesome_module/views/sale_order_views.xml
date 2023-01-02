@@ -7,6 +7,19 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
                 <field name="product_min_age"/>
+                <field name="show_button" invisible="1"/>
+                <button string="Change Product" type="object" name="action_change_product"
+                        attrs="{'invisible': [('show_button', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="products_not_allowed"/>
+            </xpath>
+            <xpath expr="//button[@name='action_draft']" position="after">
+                <field name="age_doubted" invisible="1"/>
+                <button name="action_doubt_age" type="object" string="Doubt Age"
+                        attrs="{'invisible': ['|', ('age_doubted', '!=', False), ('state', '!=', 'draft')]}"/>
+                <button name="action_doubt_clear" type="object" string="Doubt Clear"
+                        attrs="{'invisible': ['|', ('age_doubted', '=', False), ('state', '!=', 'draft')]}"/>
             </xpath>
         </field>
     </record>
