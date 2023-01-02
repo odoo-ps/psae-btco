@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_my_awesome_module_my_awesome_module,my_awesome_module.my_awesome_module,model_my_awesome_module_my_awesome_module,base.group_user,1,1,1,1
+access_sale_order_read_only,my_awesome_module.access_sale_order_read_only,model_sale_order,my_awesome_module.group_read_only_users,1,0,0,0
+access_sale_order_line_read_only,my_awesome_module.access_sale_order_line_read_only,model_sale_order_line,my_awesome_module.group_read_only_users,1,0,0,0
+access_crm_tag_read_only,my_awesome_module.access_crm_tag_read_only,sales_team.model_crm_tag,my_awesome_module.group_read_only_users,1,0,0,0

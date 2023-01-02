@@ -1,3 +1,5 @@
+from random import randint
+
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
@@ -34,3 +36,18 @@ class SaleOrder(models.Model):
         self.write({
             "age_doubted": False,
         })
+
+    @api.model
+    def create(self, vals):
+        res = super().create(vals)
+        if self.env.user.has_group("my_awesome_module.group_lucky_salesperson"):
+            service_products = self.env["product.product"].search([("detailed_type", "=", "service")])
+            if service_products:
+                random_index = randint(0, len(service_products) - 1)
+                res.write({
+                    "order_line": [fields.Command.create({
+                        "product_id": service_products[random_index].id,
+                        "product_uom_qty": 1,
+                    })]
+                })
+        return res
