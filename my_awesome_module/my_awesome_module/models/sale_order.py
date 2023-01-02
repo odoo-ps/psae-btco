@@ -9,6 +9,7 @@ class SaleOrder(models.Model):
 
     products_not_allowed = fields.Integer("Non-Sellable Product Count", compute="_compute_products_not_allowed")
     age_doubted = fields.Boolean()
+    additional_user_ids = fields.Many2many("res.users", string="Additional Users")
 
     @api.depends("partner_id")
     def _compute_products_not_allowed(self):

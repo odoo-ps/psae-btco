@@ -21,11 +21,17 @@
                 <button name="action_doubt_clear" type="object" string="Doubt Clear"
                         attrs="{'invisible': ['|', ('age_doubted', '=', False), ('state', '!=', 'draft')]}"/>
             </xpath>
+            <xpath expr="//group[@name='sale_header']" position="inside">
+                <group>
+                    <field name="additional_user_ids" widget="many2many_avatar_user"/>
+                </group>
+            </xpath>
         </field>
     </record>
 
     <record id="sale.menu_sale_order" model="ir.ui.menu">
-        <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman')),(4, ref('my_awesome_module.group_read_only_users'))]"/>
+        <field name="groups_id"
+               eval="[(4, ref('sales_team.group_sale_salesman')),(4, ref('my_awesome_module.group_read_only_users'))]"/>
     </record>
 
 </odoo>
