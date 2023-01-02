@@ -2,12 +2,20 @@
 <odoo>
     <record id="action_doubt_clear_all" model="ir.actions.server">
         <field name="name">Clear All Doubts</field>
-        <field name="type">ir.actions.server</field>
         <field name="state">code</field>
         <field name="model_id" ref="model_sale_order"/>
         <field name="binding_model_id" ref="model_sale_order"/>
         <field name="code">
             records.action_doubt_clear_all()
         </field>
+    </record>
+    <record id="action_report_partner_list" model="ir.actions.report">
+        <field name="name">Partner List</field>
+        <field name="model">res.partner</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">my_awesome_module.partner_list</field>
+        <field name="report_file">my_awesome_module.partner_list</field>
+        <field name="binding_model_id" ref="model_res_partner"/>
+        <field name="binding_type">report</field>
     </record>
 </odoo>

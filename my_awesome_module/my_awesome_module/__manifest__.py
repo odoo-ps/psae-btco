@@ -28,6 +28,7 @@
         'views/product_views.xml',
         'views/sale_order_views.xml',
         'data/actions.xml',
+        'reports/partner_list_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
