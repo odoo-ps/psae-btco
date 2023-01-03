@@ -47,13 +47,13 @@ module.exports = {
                         ],
                     },
                     {
-                        title: "Awesome School",
+                        title: "GEMS Education",
                         collapsable: true,
                         path: "/",
                         children: [
                             {
                                 title: "Part 1",
-                                path: "/exercises/awesome_school.html",
+                                path: "/exercises/gems_education.html",
                             },
                             {
                                 title: "Part 2",
