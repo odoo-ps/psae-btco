@@ -1,6 +1,6 @@
 # GEMS Education - Part 1
 
-_**Concepts:** module creation, inheritance, relational fields, domains, context, smart buttons_
+_**New Concepts:** module creation, inheritance, relational fields, domains, context, smart buttons_
 
 The largest education provider in the United Arab Emirates has reached out to you to implement a school management
 solution using Odoo. Their requirements have been captured below.
@@ -62,7 +62,7 @@ There are a list of points as well as assumptions that must be considered before
 - Set the technical name of the new module that you will create to `gems_education` and set the general name to _GEMS
   Education_
 - Ensure to show the module on the app screen and set an appropriate logo
-- All faculty members and students will be records of the `res.partner` model and there should be a way to distinguish
+- All faculty members and students will be records of the `res.users` model and there should be a way to distinguish
   between them
 - A school can have many faculty members, students, classrooms, subjects, and sessions, and no two schools should share
   the same record (hint: use `one2many` relational fields)
