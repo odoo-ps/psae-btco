@@ -13,5 +13,5 @@ class SchoolSession(models.Model):
     end_date = fields.Date(required=True)
     start_time = fields.Float(required=True)
     end_time = fields.Float(required=True)
-    year = fields.Char(required=True)
+    year = fields.Many2one("")
     student_ids = fields.Many2many("res.partner", domain="[('member_type', '=', 'student'),('school_id','=',school_id)]")

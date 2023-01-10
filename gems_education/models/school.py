@@ -24,7 +24,13 @@ class School(models.Model):
     classroom_count = fields.Integer(compute="_compute_classroom_count")
     subject_count = fields.Integer(compute="_compute_subject_count")
     session_count = fields.Integer(compute="_compute_session_count")
+    grade_ids = fields.One2many("school.grade", "school_id")
+    grade_count = fields.Integer(compute="_compute_grade_count")
 
+    @api.depends("grade_ids")
+    def _compute_grade_count(self):
+        for record in self:
+            record.grade_count = len(record.grade_ids)
 
     @api.depends("member_ids")
     def _compute_member_count(self):
@@ -55,6 +61,19 @@ class School(models.Model):
     def _compute_session_count(self):
         for record in self:
             record.session_count = len(record.session_ids)
+
+    def action_view_grades(self):
+        self.ensure_one()
+        return {
+            "type": "ir.actions.act_window",
+            "name": _("All Grades"),
+            "view_mode": "tree,form",
+            "res_model": "school.grade",
+            "domain": [("id", "in", self.grade_ids.ids)],
+            "context": {
+                "default_school_id": self.id,
+            },
+        }
 
     def action_view_classrooms(self):
         self.ensure_one()

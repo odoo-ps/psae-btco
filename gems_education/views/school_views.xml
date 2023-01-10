@@ -22,6 +22,9 @@
                         <button class="oe_stat_button" name="action_view_sessions" type="object" icon="fa-pencil">
                             <field string="Sessions" name="session_count" widget="statinfo" />
                         </button>
+                        <button class="oe_stat_button" name="action_view_grades" type="object" icon="fa-level-up">
+                            <field string="Grades" name="grade_count" widget="statinfo" />
+                        </button>
                     </div>
                     <div class="oe_title">
                         <h3>
